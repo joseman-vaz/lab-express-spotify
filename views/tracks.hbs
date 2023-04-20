@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <a href="/" class="btn btn-primary m-3">Back home</a>
+      <ul class="list-group">
+        {{#each tracks}}
+          <li class="list-group-item">
+            <div class="row align-items-center">
+              <div class="col-md-1">
+                <p class="text-muted">{{this.track_number}}</p>
+              </div>
+              <div class="col-md-7">
+                <p class="mb-0">{{this.name}}</p>
+                <p class="text-muted">{{this.artists.0.name}}
+                  -
+                  {{this.album.name}}</p>
+              </div>
+              <div class="col-md-2 text-right">
+                <audio controls>
+                  <source src="{{this.preview_url}}" type="audio/mpeg" />
+                </audio>
+              </div>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
